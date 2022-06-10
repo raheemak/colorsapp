@@ -10,20 +10,23 @@ import Card from '@mui/material/Card';
 
 export default function AddUserForm() {
 
-  const [username, setUsername] = React.useState()
-  const [group, setGroup] = React.useState()
-  const [color, setColor] = React.useState()
+  const [username, setUsername] = React.useState("")
+  const [group, setGroup] = React.useState("")
+  const [color, setColor] = React.useState("")
   const [response, setResponse] = React.useState({ result: { username: "", color: "", group: "" } })
   const [submitted, setSubmitted] = React.useState(false)
   const [showError, setShowError] = React.useState(false)
   const submitHandler = () => {
     setSubmitted(true)
+    console.log ("group: " + group)
     //make sure none of the fields are empty 
-    if (group === "" || color === "" || username ==="") {
+    if (group === "" || color === "" || username === "" ) {
+      console.log ("in here")
       setShowError(true)
+      setSubmitted(false)
       return;
     }
-    
+
     setShowError(false)
     const requestOptions = {
       method: 'POST',
@@ -31,30 +34,30 @@ export default function AddUserForm() {
     };
     fetch(`/api/v1/user?username=${username}&color=${color}&group=${group}`, requestOptions)
       .then(response => response.json())
-      .then(data => {setResponse(data)});
+      .then(data => { setResponse(data) });
 
   }
 
   const usernameHandler = (event) => {
     setUsername(event.target.value.trim())
-    if (username==="")
-      setShowError (true)
+    if (username === "")
+      setShowError(true)
 
   }
 
   const groupHandler = (event) => {
     setGroup(event.target.value.trim())
     setSubmitted(false)
-    if (group==="")
-    setShowError (true)
+    if (group === "")
+      setShowError(true)
 
   }
 
   const colorHandler = (event) => {
     setColor(event.target.value.trim())
     setSubmitted(false)
-    if (color==="")
-    setShowError (true)
+    if (color === "")
+      setShowError(true)
   }
 
   const description = () => {
@@ -75,12 +78,12 @@ export default function AddUserForm() {
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>
-
+        <div style={{ paddingBottom: "10px" }}>
+          {description()}
+        </div>
+      </Grid>
+      <Grid item xs={12}>
         <form>
-          <div style={{ paddingBottom: "10px" }}>
-            {description()}
-          </div>
-
           <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
 
             <TextField label="User Name" variant="filled" color={(showError && username === "") ? "error" : "success"} focused onChange={usernameHandler} />
@@ -95,10 +98,10 @@ export default function AddUserForm() {
 
       </Grid>
       {(submitted && !showError) && <Grid item xs={12} >
-        <Card sx={{ minWidth: 500 ,boxShadow: `0px 2px 1px -1px rgb(0 0 0 / 20%), 1px 1px 1px 1px ${color}, 1px 1px 3px 1px rgb(0 0 0 / 12%)`}}>
+        <Card sx={{ minWidth: 500, boxShadow: `0px 2px 1px -1px rgb(0 0 0 / 20%), 1px 1px 1px 1px ${color}, 1px 1px 3px 1px rgb(0 0 0 / 12%)` }}>
           <CardContent>
 
-            <Typography variant="h5" component="div" sx={{color: color}}>
+            <Typography variant="h5" component="div" sx={{ color: color }}>
               User information
             </Typography>
             <Typography sx={{ mb: 1.5 }} color="text.secondary">
