@@ -10,7 +10,14 @@
 - create read me 
 - change logo and name of app 
 - update json response from user endpoint to include parent tag
+- check that no special characters in user string: 
 
+const str = "abc's test#s";
+console.log(str.replace(/[^a-zA-Z ]/g, ""));
+replace all? 
+also replace all spaces 
+
+ -if user does not enter group,should not be allowed to submit form 
 https://colorsappraheema.herokuapp.com/
 
 
@@ -25,3 +32,17 @@ Things to note:
 • Bonus points for Docker/container deployment.
 • State any assumptions that you make on the logics/rules.
 • Organize your code in your own personal Github & send the link to the repo with detailed instruction on how to setup & run the application.
+
+----
+
+I used MongoDB on cloud: Atlas 
+
+To view app: https://colorsappraheema.herokuapp.com/
+To run app locally: download repository and do npm start 
+
+assumptions: 
+
+- input json only needs to be read in the beginning, if you wish to use it, update the file and comment out the line in index.js 
+- it is okay to display colors in lower case. this was done so that I could alleviate errors when use enters a new person/color 
+- do not need to validate if user entered color is a valid color 
+- object structure needed to stay the same in mongodb (could not use subdocuments). 
