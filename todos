@@ -1,0 +1,8 @@
+- add async and await to mongoose functions 
+- docker and heroku deployment 
+- authenticate api endpoints 
+- option to upload a file 
+-question : when user added, s hould it return the json of the updated/newly created user? 
+-unit testing 
+    - endpoints 
+    - react components 
