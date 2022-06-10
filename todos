@@ -1,8 +1,5 @@
 - add async and await to mongoose functions 
-- docker and heroku deployment 
 - authenticate api endpoints 
-- option to upload a file 
--question : when user added, s hould it return the json of the updated/newly created user? 
 -unit testing 
     - endpoints 
     - react components 
@@ -11,16 +8,17 @@
 - change logo and name of app 
 - update json response from user endpoint to include parent tag
 - check that no special characters in user string: 
+- add min length for group name / color / user name 
+
 
 const str = "abc's test#s";
 console.log(str.replace(/[^a-zA-Z ]/g, ""));
 replace all? 
 also replace all spaces 
 
- -if user does not enter group,should not be allowed to submit form 
 https://colorsappraheema.herokuapp.com/
 
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Develop RESTful APIs to handle the following:
 • Feature for users to add new group, person and color to the database (via an UI). If a person’s name already exists, replace the input color as the color for that person
 • Feature for users to retrieve all people for a particular color. Color can be selected from a pre-populated drop down list retrieved from DB. If no color is selected, display all the people organized by color and group.
@@ -33,7 +31,8 @@ Things to note:
 • State any assumptions that you make on the logics/rules.
 • Organize your code in your own personal Github & send the link to the repo with detailed instruction on how to setup & run the application.
 
-----
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 I used MongoDB on cloud: Atlas 
 

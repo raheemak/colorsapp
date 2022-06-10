@@ -54,7 +54,7 @@ export default function AddUserForm() {
   }
 
   const colorHandler = (event) => {
-    setColor(event.target.value.trim())
+    setColor(event.target.value.trim().toLowerCase())
     setSubmitted(false)
     if (color === "")
       setShowError(true)
