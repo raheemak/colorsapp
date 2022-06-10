@@ -17,14 +17,13 @@ export default function AddUserForm() {
   const [submitted, setSubmitted] = React.useState(false)
   const [showError, setShowError] = React.useState(false)
   const submitHandler = () => {
-
+    setSubmitted(true)
     //make sure none of the fields are empty 
-    if (group === "" || color == null || username == null) {
-      console.log ("here? ")
+    if (group === "" || color === "" || username ==="") {
       setShowError(true)
       return;
     }
-    setSubmitted(true)
+    
     setShowError(false)
     const requestOptions = {
       method: 'POST',
@@ -32,27 +31,30 @@ export default function AddUserForm() {
     };
     fetch(`/api/v1/user?username=${username}&color=${color}&group=${group}`, requestOptions)
       .then(response => response.json())
-      .then(data => {setResponse(data); console.log ("tried to fetch data: " + data)});
+      .then(data => {setResponse(data)});
 
   }
 
   const usernameHandler = (event) => {
     setUsername(event.target.value.trim())
-    setSubmitted(false)
+    if (username==="")
+      setShowError (true)
 
   }
 
   const groupHandler = (event) => {
     setGroup(event.target.value.trim())
     setSubmitted(false)
-
+    if (group==="")
+    setShowError (true)
 
   }
 
   const colorHandler = (event) => {
     setColor(event.target.value.trim())
     setSubmitted(false)
-
+    if (color==="")
+    setShowError (true)
   }
 
   const description = () => {
