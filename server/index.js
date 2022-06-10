@@ -48,10 +48,15 @@ const parseUserInput = () => {
 }
 //parseUserInput()
 
-app.use(express.static(path.resolve(__dirname, "./client/build")));
+app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 app.use("/api/v1", rootRouter)
+ 
+app.get ("*" , async (req, res)=>{
+  res.sendFile(path.join(__dirname, "../client", "build", "index.html"))
+  console.log ("here?")
 
+})
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
