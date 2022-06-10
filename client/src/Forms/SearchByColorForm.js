@@ -11,11 +11,9 @@ import Stack from '@mui/material/Stack';
 export default function SearchByColorForm() {
   const [color, setColor] = React.useState('');
   const [colors, setColors] = React.useState([])
-  const [showTable, setShowTable] = React.useState(false)
 
   const handleChange = (event) => {
     setColor(event.target.value);
-    setShowTable (true)
   };
 
   React.useEffect(() => {
@@ -50,8 +48,8 @@ export default function SearchByColorForm() {
         <FormHelperText>Select a color. Select none to view all users.</FormHelperText>
       </FormControl>
       <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
-        {(color != "" &&showTable) && <ByColorResults colorProp={color} />}
-        {(color === ""&&showTable) && <AllUsersResults colorProp={color} />}
+        {(color != "") && <ByColorResults colorProp={color} />}
+        {(color === "") && <AllUsersResults colorProp={color} />}
       </Stack>
     </div>
   );

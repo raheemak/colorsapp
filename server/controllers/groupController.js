@@ -8,7 +8,7 @@ exports.getAllColors = (req, res) => {
 }
 
 exports.getUsersByColor = (req, res) => {
-    const users = Group.aggregate([
+    Group.aggregate([
         {
             '$unwind': '$users'
         }, {
@@ -41,7 +41,7 @@ exports.getUsersByColor = (req, res) => {
 
 exports.getAllUsersByColor = (req, res) => {
     let groupedUsers = {};
-    const groups = Group.aggregate([
+    Group.aggregate([
         {
             '$unwind': '$users'
         }, {
@@ -80,7 +80,7 @@ exports.getAllUsersByColor = (req, res) => {
     //.colors.map ((color)=>{allUsers.push (this.getUsersByColor({params: {color}}, {}))})
 }
 
-exports.addUser =  (req, res) => {
+exports.addUser = (req, res) => {
 
     var username = req.query.username
     var group = req.query.group
@@ -88,7 +88,7 @@ exports.addUser =  (req, res) => {
     var userFound = false;
 
     //try to update user, will return null if user not found  
-     Group.findOneAndUpdate({ 'users.userName': username }, { $set: { 'users.$.userColor': color } }, (err, result) => {
+    Group.findOneAndUpdate({ 'users.userName': username }, { $set: { 'users.$.userColor': color } }, (err, result) => {
         if (err) {
             console.log(err)
         }
@@ -105,14 +105,14 @@ exports.addUser =  (req, res) => {
     //add new user to exisiting group, will return null if group not found...
     if (!userFound) {
 
-         Group.findOneAndUpdate({ 'groupName': group }, { $push: { users: { userName: username, userColor: color } } }, (err, result) => {
+        Group.findOneAndUpdate({ 'groupName': group }, { $push: { users: { userName: username, userColor: color } } }, (err, result) => {
             if (err)
                 console.log(err)
             else {
                 if (result) {
-                userFound = true;
-                res.json({ "username": username, "group": result.groupName, "color": color })
-                return;
+                    userFound = true;
+                    res.json({ "username": username, "group": result.groupName, "color": color })
+                    return;
                 }
             }
         })
@@ -125,8 +125,8 @@ exports.addUser =  (req, res) => {
             users: [{ userName: username, userColor: color }]
         })
 
-         newGroup.save().then(result => {
- 
+        newGroup.save().then(result => {
+
             res.json({ "username": username, "group": result.groupName, "color": color })
             return;
         }

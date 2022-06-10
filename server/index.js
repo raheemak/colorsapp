@@ -19,9 +19,6 @@ mongoose.connect(DB, {
   console.log("DB connection successful")
 })
 
-
-
-
 const parseUserInput = () => {
   let rawdata = fs.readFileSync(__dirname + '/data/input.json');
   let jsonGroups = JSON.parse(rawdata)
@@ -48,13 +45,11 @@ const parseUserInput = () => {
 }
 //parseUserInput()
 
-
 app.use("/api/v1", rootRouter)
 app.use(express.static(path.resolve(__dirname, "../client/build")));
- 
-app.get ("*" , async (req, res)=>{
+
+app.get("*", async (req, res) => {
   res.sendFile(path.join(__dirname, "../client", "build", "index.html"))
-  console.log ("here?")
 
 })
 app.listen(PORT, () => {
