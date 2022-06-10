@@ -48,9 +48,9 @@ const parseUserInput = () => {
 }
 //parseUserInput()
 
-app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 app.use("/api/v1", rootRouter)
+app.use(express.static(path.resolve(__dirname, "../client/build")));
  
 app.get ("*" , async (req, res)=>{
   res.sendFile(path.join(__dirname, "../client", "build", "index.html"))

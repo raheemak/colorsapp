@@ -6,3 +6,4 @@
 -unit testing 
     - endpoints 
     - react components 
+- update url based on environment 
