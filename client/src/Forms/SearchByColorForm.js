@@ -15,6 +15,7 @@ export default function SearchByColorForm() {
 
   const handleChange = (event) => {
     setColor(event.target.value);
+    setShowTable (true)
   };
 
   React.useEffect(() => {
@@ -49,8 +50,8 @@ export default function SearchByColorForm() {
         <FormHelperText>Select a color. Select none to view all users.</FormHelperText>
       </FormControl>
       <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
-        {(color != "") && <ByColorResults colorProp={color} />}
-        {(color === "") && <AllUsersResults colorProp={color} />}
+        {(color != "" &&showTable) && <ByColorResults colorProp={color} />}
+        {(color === ""&&showTable) && <AllUsersResults colorProp={color} />}
       </Stack>
     </div>
   );

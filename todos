@@ -7,3 +7,21 @@
     - endpoints 
     - react components 
 - update url based on environment 
+- create read me 
+- change logo and name of app 
+- update json response from user endpoint to include parent tag
+
+https://colorsappraheema.herokuapp.com/
+
+
+Develop RESTful APIs to handle the following:
+• Feature for users to add new group, person and color to the database (via an UI). If a person’s name already exists, replace the input color as the color for that person
+• Feature for users to retrieve all people for a particular color. Color can be selected from a pre-populated drop down list retrieved from DB. If no color is selected, display all the people organized by color and group.
+ 
+
+Things to note:
+• Ensure that proper security mechanism is implemented for your APIs
+• Please include automated unit testing & indicate what your code coverage % is.
+• Bonus points for Docker/container deployment.
+• State any assumptions that you make on the logics/rules.
+• Organize your code in your own personal Github & send the link to the repo with detailed instruction on how to setup & run the application.

@@ -91,15 +91,12 @@ exports.addUser =  (req, res) => {
      Group.findOneAndUpdate({ 'users.userName': username }, { $set: { 'users.$.userColor': color } }, (err, result) => {
         if (err) {
             console.log(err)
-            console.log("error")
         }
         else {
-            console.log ("one")
             if (result) {
                 console.log(result)
                 userFound = true;
                 res.json({ "username": username, "group": result.groupName, "color": color })
-                console.log("in mongodb  response for user found")
                 return;
             }
         }
@@ -107,16 +104,12 @@ exports.addUser =  (req, res) => {
 
     //add new user to exisiting group, will return null if group not found...
     if (!userFound) {
-        console.log("user not found ")
 
          Group.findOneAndUpdate({ 'groupName': group }, { $push: { users: { userName: username, userColor: color } } }, (err, result) => {
             if (err)
                 console.log(err)
             else {
-                console.log ("Two")
                 if (result) {
-                console.log("in mongodb  response for group found")
-                console.log(result)
                 userFound = true;
                 res.json({ "username": username, "group": result.groupName, "color": color })
                 return;
@@ -127,16 +120,13 @@ exports.addUser =  (req, res) => {
     //if user still not found, create new group with user 
 
     if (!userFound) {
-        console.log("user not found and group not found")
         const newGroup = new Group({
             groupName: group,
             users: [{ userName: username, userColor: color }]
         })
 
          newGroup.save().then(result => {
-            console.log(document)
-            console.log("in mongodb  response for new user created")
-
+ 
             res.json({ "username": username, "group": result.groupName, "color": color })
             return;
         }
