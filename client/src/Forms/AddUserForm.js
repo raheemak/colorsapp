@@ -13,40 +13,50 @@ export default function AddUserForm() {
   const [username, setUsername] = React.useState("")
   const [group, setGroup] = React.useState("")
   const [color, setColor] = React.useState("")
-  const [response, setResponse] = React.useState({ result: { username: "", color: "", group: "" } })
+  const [response, setResponse] = React.useState({ username: "", color: "", group: "" })
   const [submitted, setSubmitted] = React.useState(false)
   const [showError, setShowError] = React.useState(false)
-  const submitHandler = () => {
-    setSubmitted(true)
-    console.log ("group: " + group)
+  const submitHandler =  () => {
+    
     //make sure none of the fields are empty 
-    if (group === "" || color === "" || username === "" ) {
-      console.log ("in here")
+    if (group === "" || color === "" || username === "") {
       setShowError(true)
       setSubmitted(false)
       return;
     }
-
+    setSubmitted(true);
     setShowError(false)
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
     };
-    fetch(`/api/v1/user?username=${username}&color=${color}&group=${group}`, requestOptions)
+     fetch(`/api/v1/user?username=${username}&color=${color}&group=${group}`, requestOptions)
       .then(response => response.json())
-      .then(data => { setResponse(data) });
+      .then(data => { setResponse(data)  });
+
+     
 
   }
 
   const usernameHandler = (event) => {
-    setUsername(event.target.value.trim())
+    let usernameString = event.target.value.trim()
+    //remove special characters and numbers
+    usernameString = usernameString.replace(/[^a-zA-Z ]/g, "")
+    //capitalize first letter only 
+    usernameString = usernameString.charAt(0).toUpperCase() + usernameString.slice(1).toLowerCase()
+    setUsername(usernameString)
     if (username === "")
       setShowError(true)
 
   }
 
   const groupHandler = (event) => {
-    setGroup(event.target.value.trim())
+    let groupString = event.target.value.trim()
+    //remove special characters
+    groupString = groupString.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
+    //capitalize first letter only 
+    groupString = groupString.charAt(0).toUpperCase() + groupString.slice(1).toLowerCase()
+    setGroup(groupString)
     setSubmitted(false)
     if (group === "")
       setShowError(true)
@@ -54,7 +64,10 @@ export default function AddUserForm() {
   }
 
   const colorHandler = (event) => {
-    setColor(event.target.value.trim().toLowerCase())
+    let colorString = event.target.value.trim().toLowerCase()
+    //remove special characters and numbers
+    colorString = colorString.replace(/[^a-zA-Z ]/g, "")
+    setColor(colorString)
     setSubmitted(false)
     if (color === "")
       setShowError(true)
@@ -102,13 +115,16 @@ export default function AddUserForm() {
           <CardContent>
 
             <Typography variant="h5" component="div" sx={{ color: color }}>
-              User information
+              Added User Information
             </Typography>
             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              <p>Username:    {response.username}</p>
-              <p>Group: {response.group}</p>
-              <p>Color: {response.color}</p>
-
+              Username: {response.username}
+            </Typography>
+            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+              Group: {response.group}
+            </Typography>
+            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+              Color: {response.color}
             </Typography>
 
           </CardContent>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1654913305432" clover="3.2.0">
+  <project timestamp="1654913305432" name="All files">
+    <metrics statements="76" coveredstatements="63" conditionals="36" coveredconditionals="35" methods="29" coveredmethods="17" elements="141" coveredelements="115" complexity="0" loc="76" ncloc="76" packages="3" files="5" classes="5"/>
+    <package name="Forms">
+      <metrics statements="57" coveredstatements="55" conditionals="36" coveredconditionals="35" methods="14" coveredmethods="12"/>
+      <file name="AddUserForm.js" path="/Users/raheema/Desktop/Colors/client/src/Forms/AddUserForm.js">
+        <metrics statements="46" coveredstatements="46" conditionals="30" coveredconditionals="30" methods="8" coveredmethods="8"/>
+        <line num="13" count="38" type="stmt"/>
+        <line num="14" count="38" type="stmt"/>
+        <line num="15" count="38" type="stmt"/>
+        <line num="16" count="38" type="stmt"/>
+        <line num="17" count="38" type="stmt"/>
+        <line num="18" count="38" type="stmt"/>
+        <line num="19" count="38" type="stmt"/>
+        <line num="22" count="3" type="cond" truecount="5" falsecount="0"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="41" count="38" type="stmt"/>
+        <line num="42" count="19" type="stmt"/>
+        <line num="44" count="19" type="stmt"/>
+        <line num="46" count="19" type="stmt"/>
+        <line num="47" count="19" type="stmt"/>
+        <line num="48" count="19" type="cond" truecount="2" falsecount="0"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="53" count="38" type="stmt"/>
+        <line num="54" count="6" type="stmt"/>
+        <line num="56" count="6" type="stmt"/>
+        <line num="58" count="6" type="stmt"/>
+        <line num="59" count="6" type="stmt"/>
+        <line num="60" count="6" type="stmt"/>
+        <line num="61" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="66" count="38" type="stmt"/>
+        <line num="67" count="6" type="stmt"/>
+        <line num="69" count="6" type="stmt"/>
+        <line num="70" count="6" type="stmt"/>
+        <line num="71" count="6" type="stmt"/>
+        <line num="72" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="73" count="2" type="stmt"/>
+        <line num="76" count="38" type="stmt"/>
+        <line num="77" count="38" type="cond" truecount="2" falsecount="0"/>
+        <line num="78" count="32" type="stmt"/>
+        <line num="82" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="83" count="2" type="stmt"/>
+        <line num="88" count="4" type="stmt"/>
+        <line num="91" count="38" type="stmt"/>
+      </file>
+      <file name="SearchByColorForm.js" path="/Users/raheema/Desktop/Colors/client/src/Forms/SearchByColorForm.js">
+        <metrics statements="11" coveredstatements="9" conditionals="6" coveredconditionals="5" methods="6" coveredmethods="4"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="47" count="0" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="Layout">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Header.js" path="/Users/raheema/Desktop/Colors/client/src/Layout/Header.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="ResultsTable">
+      <metrics statements="17" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="14" coveredmethods="4"/>
+      <file name="AllUsersResults.js" path="/Users/raheema/Desktop/Colors/client/src/ResultsTable/AllUsersResults.js">
+        <metrics statements="9" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="4"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+      </file>
+      <file name="ByColorResults.js" path="/Users/raheema/Desktop/Colors/client/src/ResultsTable/ByColorResults.js">
+        <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

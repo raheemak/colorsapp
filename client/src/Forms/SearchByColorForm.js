@@ -11,6 +11,7 @@ import Stack from '@mui/material/Stack';
 export default function SearchByColorForm() {
   const [color, setColor] = React.useState('');
   const [colors, setColors] = React.useState([])
+  const [showTable, setShowTable] = React.useState(false)
 
   const handleChange = (event) => {
     setColor(event.target.value);

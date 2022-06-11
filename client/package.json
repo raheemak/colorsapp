@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "https://colorsappraheema.herokuapp.com/",
   "dependencies": {
+    "@babel/plugin-syntax-jsx": "^7.17.12",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.8.3",
@@ -38,5 +39,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "babel-jest": "^28.1.1"
   }
 }
