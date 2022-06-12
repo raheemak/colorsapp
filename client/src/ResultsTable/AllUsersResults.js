@@ -14,7 +14,7 @@ export default function AllUsersResults(props) {
   React.useEffect(() => {
     fetch(`/api/v1/color/${props.colorProp}`)
       .then((res) => res.json())
-      .then((data) => { setData(data.result); });
+      .then((data) => {  setData(data.result); });
   }, []);
 
   return (
@@ -23,9 +23,7 @@ export default function AllUsersResults(props) {
         <TableHead>
           <TableRow>
             <TableCell>Color</TableCell>
-            
             <TableCell align="right">User Name</TableCell>
-
           </TableRow>
         </TableHead>
         <TableBody>
@@ -34,26 +32,33 @@ export default function AllUsersResults(props) {
           {Object.keys(data).map(color => <TableRow
             key={color}
             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-          ><TableCell component="th" scope="row" sx={{color: color, fontSize:".75rem"}}>
+          ><TableCell component="th" scope="row" sx={{ color: color, fontSize: ".75rem" }}>
               {color}
             </TableCell>
             <TableCell align="right">
               <Table sx={{ minWidth: 500 }} aria-label="simple table">
                 {data[color].map(group => {
-                  return <TableRow  sx={{ padding: "2px 10px", borderBottom: "1px solid rgba(224, 224, 224, 1)" }}> <TableCell align="left" sx={{ padding: "2px 10px", borderBottom: "none",fontSize:".75rem" }}>
+                  return <TableRow sx={{ padding: "2px 10px", borderBottom: "1px solid rgba(224, 224, 224, 1)" }}> 
+                  <TableCell align="left" sx={{ padding: "2px 10px", borderBottom: "none", fontSize: ".75rem" }}>
                     {Object.keys(group)}
-                    </TableCell>
-                    {Object.keys(group).map ( user=> {return <TableCell align="right" sx={{ padding: "2px 10px", borderBottom: "none" }}>{group[user].map(user=><Table><TableRow>
-                      <TableCell align="right"sx={{ padding: "2px 10px", borderBottom: "none" ,fontSize:".75rem"}}>{user}</TableCell></TableRow></Table>)}</TableCell>})}
-                 </TableRow>
+                  </TableCell>
+                    {Object.keys(group).map(user => {
+                      return <TableCell align="right" sx={{ padding: "2px 10px", borderBottom: "none" }}>
+                        {group[user].map(user =>
+                        <Table>
+                          <TableRow>
+                            <TableCell align="right" sx={{ padding: "2px 10px", borderBottom: "none", fontSize: ".75rem" }}>
+                              {user}
+                            </TableCell>
+                          </TableRow>
+                        </Table>)}
+                      </TableCell>
+                    })}
+                  </TableRow>
                 })}
               </Table>
             </TableCell>
           </TableRow>)}
-
-
-
-
         </TableBody>
       </Table>
     </TableContainer>

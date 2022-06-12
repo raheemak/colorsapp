@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/9</span>
+                <span class='fraction'>6/10</span>
             </div>
         
             
@@ -124,7 +124,12 @@
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
 <a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -134,18 +139,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -169,7 +172,14 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -201,7 +211,7 @@ export default function AllUsersResults(props) {
   React.useEffect(() =&gt; {
     fetch(`/api/v1/color/${props.colorProp}`)
       .then((res) =&gt; res.json())
-      .then((data) =&gt; { setData(data.result); });
+      .then((data) =&gt; {  setData(data.result); });
   }, []);
 &nbsp;
   return (
@@ -210,9 +220,7 @@ export default function AllUsersResults(props) {
         &lt;TableHead&gt;
           &lt;TableRow&gt;
             &lt;TableCell&gt;Color&lt;/TableCell&gt;
-            
             &lt;TableCell align="right"&gt;User Name&lt;/TableCell&gt;
-&nbsp;
           &lt;/TableRow&gt;
         &lt;/TableHead&gt;
         &lt;TableBody&gt;
@@ -221,26 +229,33 @@ export default function AllUsersResults(props) {
           {Object.keys(data).map(<span class="fstat-no" title="function not covered" >co</span>lor =&gt; <span class="cstat-no" title="statement not covered" >&lt;TableRow</span>
             key={color}
             sx={{ '&amp;:last-child td, &amp;:last-child th': { border: 0 } }}
-          &gt;&lt;TableCell component="th" scope="row" sx={{color: color, fontSize:".75rem"}}&gt;
+          &gt;&lt;TableCell component="th" scope="row" sx={{ color: color, fontSize: ".75rem" }}&gt;
               {color}
             &lt;/TableCell&gt;
             &lt;TableCell align="right"&gt;
               &lt;Table sx={{ minWidth: 500 }} aria-label="simple table"&gt;
                 {data[color].map(<span class="fstat-no" title="function not covered" >gr</span>oup =&gt; {
-<span class="cstat-no" title="statement not covered" >                  return &lt;TableRow  sx={{ padding: "2px 10px", borderBottom: "1px solid rgba(224, 224, 224, 1)" }}&gt; &lt;TableCell align="left" sx={{ padding: "2px 10px", borderBottom: "none",fontSize:".75rem" }}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                  return &lt;TableRow sx={{ padding: "2px 10px", borderBottom: "1px solid rgba(224, 224, 224, 1)" }}&gt; </span>
+                  &lt;TableCell align="left" sx={{ padding: "2px 10px", borderBottom: "none", fontSize: ".75rem" }}&gt;
                     {Object.keys(group)}
-                    &lt;/TableCell&gt;
-                    {Object.keys(group).map ( <span class="fstat-no" title="function not covered" >us</span>er=&gt; {<span class="cstat-no" title="statement not covered" >return &lt;TableCell align="right" sx={{ padding: "2px 10px", borderBottom: "none" }}&gt;{group[user].map(<span class="fstat-no" title="function not covered" >us</span>er=&gt;<span class="cstat-no" title="statement not covered" >&lt;Table&gt;&lt;TableRow&gt;</span></span>
-                      &lt;TableCell align="right"sx={{ padding: "2px 10px", borderBottom: "none" ,fontSize:".75rem"}}&gt;{user}&lt;/TableCell&gt;&lt;/TableRow&gt;&lt;/Table&gt;)}&lt;/TableCell&gt;})}
-                 &lt;/TableRow&gt;
+                  &lt;/TableCell&gt;
+                    {Object.keys(group).map(<span class="fstat-no" title="function not covered" >us</span>er =&gt; {
+<span class="cstat-no" title="statement not covered" >                      return &lt;TableCell align="right" sx={{ padding: "2px 10px", borderBottom: "none" }}&gt;</span>
+                        {group[user].map(<span class="fstat-no" title="function not covered" >us</span>er =&gt;
+<span class="cstat-no" title="statement not covered" >                        &lt;Table&gt;</span>
+                          &lt;TableRow&gt;
+                            &lt;TableCell align="right" sx={{ padding: "2px 10px", borderBottom: "none", fontSize: ".75rem" }}&gt;
+                              {user}
+                            &lt;/TableCell&gt;
+                          &lt;/TableRow&gt;
+                        &lt;/Table&gt;)}
+                      &lt;/TableCell&gt;
+                    })}
+                  &lt;/TableRow&gt;
                 })}
               &lt;/Table&gt;
             &lt;/TableCell&gt;
           &lt;/TableRow&gt;)}
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
         &lt;/TableBody&gt;
       &lt;/Table&gt;
     &lt;/TableContainer&gt;
@@ -253,7 +268,7 @@ export default function AllUsersResults(props) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Fri Jun 10 2022 22:08:25 GMT-0400 (Eastern Daylight Time)
+                at Sun Jun 12 2022 18:34:40 GMT-0400 (Eastern Daylight Time)
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>6/8</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>4/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>6/8</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -115,13 +115,7 @@
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -131,18 +125,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -163,8 +153,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -188,28 +176,24 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 &nbsp;
-&nbsp;
-export default function <span class="fstat-no" title="function not covered" >ByColorResults(</span>props) {
-&nbsp;
-  const [data, setData] = <span class="cstat-no" title="statement not covered" >React.useState([])</span>
-<span class="cstat-no" title="statement not covered" >  React.useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    fetch(`/api/v1/color/${props.colorProp}`)</span>
-      .then(<span class="fstat-no" title="function not covered" >(r</span>es) =&gt; <span class="cstat-no" title="statement not covered" >res.json())</span>
-      .then(<span class="fstat-no" title="function not covered" >(r</span>es) =&gt; { <span class="cstat-no" title="statement not covered" >setData(res.groups) </span>});
+export default function ByColorResults(props) {
+  const [data, setData] = React.useState([])
+  React.useEffect(() =&gt; {
+    fetch(`/api/v1/color/${props.colorProp}`)
+      .then((res) =&gt; res.json())
+      .then((res) =&gt; {  setData(res.groups) });
   }, [props.colorProp]);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;TableContainer component={Paper} sx={{ width: "75%", boxShadow: `0px 2px 1px -1px rgb(0 0 0 / 20%), 1px 1px 1px 1px ${props.colorProp}, 1px 1px 3px 1px rgb(0 0 0 / 12%)` }}&gt;
       &lt;Table aria-label="simple table"&gt;
         &lt;TableHead&gt;
           &lt;TableRow&gt;
             &lt;TableCell&gt;Group Name&lt;/TableCell&gt;
             &lt;TableCell align="right"&gt;User Name&lt;/TableCell&gt;
-&nbsp;
           &lt;/TableRow&gt;
         &lt;/TableHead&gt;
         &lt;TableBody&gt;
-&nbsp;
 &nbsp;
           {Object.keys(data).map(<span class="fstat-no" title="function not covered" >gr</span>oup =&gt; <span class="cstat-no" title="statement not covered" >&lt;TableRow</span>
             key={group}
@@ -220,18 +204,16 @@ export default function <span class="fstat-no" title="function not covered" >ByC
             &lt;TableCell align="right"&gt;
               &lt;Table sx={{ minWidth: 500 }} aria-label="simple table"&gt;
                 {data[group].map(<span class="fstat-no" title="function not covered" >pe</span>rson =&gt; {
-<span class="cstat-no" title="statement not covered" >                  return &lt;TableRow &gt;</span>
-                    &lt;TableCell align="right" sx={{ padding: "2px 10px", borderBottom: "none" }}&gt;{person}
-                    &lt;/TableCell&gt;
-                  &lt;/TableRow&gt;
+<span class="cstat-no" title="statement not covered" >                  return (</span>
+                    &lt;TableRow &gt;
+                      &lt;TableCell align="right" sx={{ padding: "2px 10px", borderBottom: "none" }}&gt;
+                        {person}
+                      &lt;/TableCell&gt;
+                    &lt;/TableRow&gt;)
                 })}
               &lt;/Table&gt;
             &lt;/TableCell&gt;
           &lt;/TableRow&gt;)}
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
         &lt;/TableBody&gt;
       &lt;/Table&gt;
     &lt;/TableContainer&gt;
@@ -244,7 +226,7 @@ export default function <span class="fstat-no" title="function not covered" >ByC
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Fri Jun 10 2022 22:08:25 GMT-0400 (Eastern Daylight Time)
+                at Sun Jun 12 2022 18:34:40 GMT-0400 (Eastern Daylight Time)
             </div>
         <script src="../prettify.js"></script>
         <script>

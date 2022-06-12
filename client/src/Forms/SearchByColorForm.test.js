@@ -5,7 +5,7 @@ import React from 'react';
 describe("SearchByColorFormComponent", () => {
     test("renders form", async () => {
 
-        //mock fetch (api call to submit user/group/color)
+        //mock fetch (api call to retrieve colors)
         window.fetch = jest.fn(() => Promise.resolve({
             json: () => Promise.resolve({
                 colors: ["red", "blue", "green"]

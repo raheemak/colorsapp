@@ -7,10 +7,8 @@ import Container from '@mui/material/Container';
 
 
 const ResponsiveAppBar = () => {
-  
-
     return (
-        <AppBar position="static" sx={{backgroundColor: "white"}}>
+        <AppBar position="static" sx={{ backgroundColor: "white" }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
@@ -28,16 +26,16 @@ const ResponsiveAppBar = () => {
                             textDecoration: 'none',
                         }}
                     >
-                                  <div className="container">
-                            <span style={{color:"#FF0000"}}>C</span>
-                            <span style={{color:"#66CC66"}}>O</span>
-                            <span style={{color:"#FF9966"}}>L</span>
-                            <span style={{color:"#FFCCCC"}}>O</span>
-                            <span style={{color:"#FF0066"}}>R</span>
-                            <span style={{color:"#FFCCCC"}}>S</span>
-                            <span style={{color:"#FF0000"}}>A</span>
-                            <span style={{color:"#66CC66"}}>P</span>
-                            <span style={{color:"#FF9966"}}>P</span>
+                        <div className="container">
+                            <span style={{ color: "#FF0000" }}>C</span>
+                            <span style={{ color: "#66CC66" }}>O</span>
+                            <span style={{ color: "#FF9966" }}>L</span>
+                            <span style={{ color: "#FFCCCC" }}>O</span>
+                            <span style={{ color: "#FF0066" }}>R</span>
+                            <span style={{ color: "#FFCCCC" }}>S</span>
+                            <span style={{ color: "#FF0000" }}>A</span>
+                            <span style={{ color: "#66CC66" }}>P</span>
+                            <span style={{ color: "#FF9966" }}>P</span>
                         </div>
                     </Typography>
 
@@ -61,16 +59,16 @@ const ResponsiveAppBar = () => {
                             textDecoration: 'none',
                         }}
                     >
-                                  <div className="container">
-                            <span style={{color:"#FF0000"}}>C</span>
-                            <span style={{color:"#66CC66"}}>O</span>
-                            <span style={{color:"#FF9966"}}>L</span>
-                            <span style={{color:"#FFCCCC"}}>O</span>
-                            <span style={{color:"#FF0066"}}>R</span>
-                            <span style={{color:"#FFCCCC"}}>S</span>
-                            <span style={{color:"#FF0000"}}>A</span>
-                            <span style={{color:"#66CC66"}}>P</span>
-                            <span style={{color:"#FF9966"}}>P</span>
+                        <div className="container">
+                            <span style={{ color: "#FF0000" }}>C</span>
+                            <span style={{ color: "#66CC66" }}>O</span>
+                            <span style={{ color: "#FF9966" }}>L</span>
+                            <span style={{ color: "#FFCCCC" }}>O</span>
+                            <span style={{ color: "#FF0066" }}>R</span>
+                            <span style={{ color: "#FFCCCC" }}>S</span>
+                            <span style={{ color: "#FF0000" }}>A</span>
+                            <span style={{ color: "#66CC66" }}>P</span>
+                            <span style={{ color: "#FF9966" }}>P</span>
                         </div>
                     </Typography>
 

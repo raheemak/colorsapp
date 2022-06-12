@@ -7,14 +7,12 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-
 export default function ByColorResults(props) {
-
   const [data, setData] = React.useState([])
   React.useEffect(() => {
     fetch(`/api/v1/color/${props.colorProp}`)
       .then((res) => res.json())
-      .then((res) => { setData(res.groups) });
+      .then((res) => {  setData(res.groups) });
   }, [props.colorProp]);
 
   return (
@@ -24,11 +22,9 @@ export default function ByColorResults(props) {
           <TableRow>
             <TableCell>Group Name</TableCell>
             <TableCell align="right">User Name</TableCell>
-
           </TableRow>
         </TableHead>
         <TableBody>
-
 
           {Object.keys(data).map(group => <TableRow
             key={group}
@@ -39,18 +35,16 @@ export default function ByColorResults(props) {
             <TableCell align="right">
               <Table sx={{ minWidth: 500 }} aria-label="simple table">
                 {data[group].map(person => {
-                  return <TableRow >
-                    <TableCell align="right" sx={{ padding: "2px 10px", borderBottom: "none" }}>{person}
-                    </TableCell>
-                  </TableRow>
+                  return (
+                    <TableRow >
+                      <TableCell align="right" sx={{ padding: "2px 10px", borderBottom: "none" }}>
+                        {person}
+                      </TableCell>
+                    </TableRow>)
                 })}
               </Table>
             </TableCell>
           </TableRow>)}
-
-
-
-
         </TableBody>
       </Table>
     </TableContainer>

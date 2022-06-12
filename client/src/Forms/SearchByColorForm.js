@@ -20,33 +20,32 @@ export default function SearchByColorForm() {
   React.useEffect(() => {
     fetch("/api/v1/colors")
       .then((res) => res.json())
-      .then((data) => { console.log(data); setColors(data.colors) });
+      .then((data) => { setColors(data.colors) });
   }, []);
-
-
 
 
   return (
     <div>
       <FormControl size="small" color="success" sx={{ m: 1, minWidth: 120 }}>
         <InputLabel id="demo-simple-select-helper-label">Color</InputLabel>
-        <Select 
+        <Select
           labelId="demo-simple-select-helper-label"
           id="demo-simple-select-helper"
-          sx={{color: {color}, fontSize:".75rem"}}
+          sx={{ color: { color }, fontSize: ".75rem" }}
           value={color}
           label="Color"
-          onChange={handleChange}
-          
-        >
-          <MenuItem value="" sx={{fontSize:".75rem"}}
->
+          onChange={handleChange} >
+          <MenuItem value="" sx={{ fontSize: ".75rem" }}>
             <em>None</em>
           </MenuItem>
-
-          {colors && colors.map(color => <MenuItem value={color} sx={{color: {color}, fontSize:".75rem"}}>{color}</MenuItem>)}
+          {colors && colors.map(color =>
+            <MenuItem value={color} sx={{ color: { color }, fontSize: ".75rem" }}>
+              {color}
+            </MenuItem>)}
         </Select>
-        <FormHelperText>Select a color. Select none to view all users.</FormHelperText>
+        <FormHelperText>
+          Select a color. Select none to view all users.
+        </FormHelperText>
       </FormControl>
       <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
         {(color != "") && <ByColorResults colorProp={color} />}
