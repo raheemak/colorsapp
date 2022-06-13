@@ -12,9 +12,16 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-dotenv.config({ path: __dirname + '/config.env' })
+//set database based on test or prod
+if (process.env.npm_lifecycle_script == "mocha") {
+  dotenv.config({ path: __dirname + '/test-config.env' })
+} else {
+  dotenv.config({ path: __dirname + '/config.env' })
 
+}
 const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD)
+
+console.log (DB)
 mongoose.connect(DB, {
   useNewUrlParser: true
 }).then(connectionObject => {
@@ -38,6 +45,7 @@ const parseUserInput = () => {
     })
 
     tempGroup.save().then(document => {
+      console.log("saved document")
     }
     ).catch(e => { console.log(e) })
 
@@ -50,8 +58,6 @@ const parseUserInput = () => {
 
 
 app.use("/api/v1", rootRouter)
-
-
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 app.get("*", async (req, res) => {
@@ -61,3 +67,5 @@ app.get("*", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
+
+module.exports = app //for testing 

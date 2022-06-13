@@ -2,7 +2,6 @@ const express = require("express");
 const groupController = require("../controllers/groupController")
 
 const { expressjwt: jwt } = require("express-jwt");
-
 const jwks = require('jwks-rsa');
 
 
