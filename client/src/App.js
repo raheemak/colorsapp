@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from "react";
 import ResponsiveAppBar from "./Layout/Header"
@@ -11,7 +10,6 @@ import SearchByColorForm from './Forms/SearchByColorForm';
 import APIProvider from './store/APIProvider';
 
 function App() {
-  const [data, setData] = React.useState();
   const [showUserForm, setShowUserForm] =React.useState (false)
   const [showSearchForm, setShowSearchForm] = React.useState (false)
   
