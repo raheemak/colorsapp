@@ -45,7 +45,7 @@ Code coverage for backend: 88.88% of statements
 
 ## Assumptions
 
-- Input json only needs to be read in the beginning, if you wish to use it, update the file and comment out the line in index.js 
+- Input json only needs to be read in the beginning, if you wish to use it, update the file and comment in line 51 (parseUserInput()) in server/index.js 
 - It is okay to display colors in lower case. This was done so that I could alleviate errors when use enters a new person/color 
 - Do not need to validate if user entered color is a valid color 
 - Object structure needed to stay the same in mongodb (could not use subdocuments). 
