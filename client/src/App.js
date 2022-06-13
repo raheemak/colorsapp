@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import AddUserForm from "./Forms/AddUserForm"
 import SearchByColorForm from './Forms/SearchByColorForm';
+import APIProvider from './store/APIProvider';
 
 function App() {
   const [data, setData] = React.useState();
@@ -30,6 +31,7 @@ function App() {
   }
 
   return (
+    <APIProvider>
     <div className="App">
       <ResponsiveAppBar />
       <Box sx={{ flexGrow: 1 }} style={{padding: "18px 36px"}}>
@@ -47,6 +49,7 @@ function App() {
         </Grid>
       </Box>
     </div>
+    </APIProvider>
   );
 }
 

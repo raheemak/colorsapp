@@ -2,7 +2,6 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://colorsappraheema.herokuapp.com/",
   "dependencies": {
     "@babel/plugin-syntax-jsx": "^7.17.12",
     "@emotion/react": "^11.9.0",
