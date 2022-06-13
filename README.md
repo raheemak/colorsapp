@@ -19,6 +19,7 @@ The first time you run the app:
 ### `npm install`
 ### `cd client`
 ### `npm install`
+### `cd ..`
 
 Then: 
 ### `npm start`
