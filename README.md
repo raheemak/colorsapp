@@ -13,8 +13,14 @@ You can also run the app locally, explained below.
 
 ## Available Scripts
 
-In the project directory, you can run the applicaition locally: 
+In the project directory, you can run the application locally: 
 
+The first time you run the app: 
+### `npm install`
+### `cd client`
+### `npm install`
+
+Then: 
 ### `npm start`
 
 Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
