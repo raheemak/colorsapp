@@ -33,6 +33,11 @@ You can also test the frontend:
 ### `cd client`
 ### `npm test`
 
+## Code Coverage
+
+Code coverage for frontend: 89.61% of statements
+Code coverage for backend: 88.88% of statements
+
 
 ## Assumptions
 
