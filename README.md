@@ -5,7 +5,11 @@ This is an application built with MongoDB (on cloud- Atlas), React JS, and Node 
 The functionality of the app is as follows: 
 • Feature for users to add new group, person and color to the database (via an UI). If a person’s name already exists, replace the input color as the color for that person
 • Feature for users to retrieve all people for a particular color. Color can be selected from a pre-populated drop down list retrieved from DB. If no color is selected, display all the people organized by color and group.
- 
+
+## View deployed app: 
+https://colorsappraheema.herokuapp.com/
+You can also run the app locally, explained below.
+
 ## Available Scripts
 
 In the project directory, you can run the applicaition locally: 
