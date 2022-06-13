@@ -21,7 +21,6 @@ if (process.env.npm_lifecycle_script == "mocha") {
 }
 const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD)
 
-console.log (DB)
 mongoose.connect(DB, {
   useNewUrlParser: true
 }).then(connectionObject => {

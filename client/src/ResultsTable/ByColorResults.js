@@ -14,7 +14,6 @@ export default function ByColorResults(props) {
 
   React.useEffect(() => {
 
-    console.log (apiContext.api_url); 
     const requestOptions = {
       headers: {
         'Content-Type': 'application/json',
