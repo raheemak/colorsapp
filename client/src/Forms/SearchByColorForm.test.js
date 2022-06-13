@@ -2,6 +2,7 @@ import SearchByColorForm from "./SearchByColorForm"
 import { render, screen, waitFor, act } from "@testing-library/react"
 import '@testing-library/jest-dom'
 import React from 'react';
+
 describe("SearchByColorFormComponent", () => {
     test("renders form", async () => {
 
