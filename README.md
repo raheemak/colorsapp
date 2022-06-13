@@ -36,7 +36,11 @@ You can also test the frontend:
 ## Code Coverage
 
 Code coverage for frontend: 89.61% of statements
+
+<img width="654" alt="Screen Shot 2022-06-12 at 6 34 51 PM" src="https://user-images.githubusercontent.com/6608323/173433499-671679f6-6f3f-4823-acac-b24235588ba8.png">
+
 Code coverage for backend: 88.88% of statements
+<img width="638" alt="Screen Shot 2022-06-13 at 3 49 50 PM" src="https://user-images.githubusercontent.com/6608323/173433512-27ac67c2-1f2c-411c-b6cb-40a91ba47bbc.png">
 
 
 ## Assumptions
