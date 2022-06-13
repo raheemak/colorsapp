@@ -42,19 +42,13 @@ const parseUserInput = () => {
         }
       })
     })
-
     tempGroup.save().then(document => {
       console.log("saved document")
     }
     ).catch(e => { console.log(e) })
-
   });
-
-
 }
 //parseUserInput()
-
-
 
 app.use("/api/v1", rootRouter)
 app.use(express.static(path.resolve(__dirname, "../client/build")));
