@@ -1,15 +1,10 @@
 - add async and await to mongoose functions 
-- authenticate api endpoints 
 -unit testing 
     - endpoints 
-    - react components 
-- update url based on environment 
 - create read me 
 - change logo and name of app 
-- update json response from user endpoint to include parent tag
-- add min length for group name / color / user name 
-
-
+- store authorization in context and separate file 
+- change proxy url based on environment ...? 
 https://colorsappraheema.herokuapp.com/
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------

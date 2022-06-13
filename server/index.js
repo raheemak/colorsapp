@@ -4,6 +4,8 @@ const dotenv = require("dotenv")
 const path = require('path')
 const fs = require('fs');
 const rootRouter = require("./routes/router")
+
+
 const Group = require("./models/groupModel")
 
 const PORT = process.env.PORT || 3001;
@@ -45,7 +47,11 @@ const parseUserInput = () => {
 }
 //parseUserInput()
 
+
+
 app.use("/api/v1", rootRouter)
+
+
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 app.get("*", async (req, res) => {

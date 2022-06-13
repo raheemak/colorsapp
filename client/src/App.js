@@ -15,9 +15,7 @@ function App() {
   const [showSearchForm, setShowSearchForm] = React.useState (false)
   
   React.useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
+    console.log (process.env.NODE_ENV)
   }, []);
 
   const showEnterUserFormHandler = ()=>{
