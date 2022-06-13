@@ -8,6 +8,7 @@ The functionality of the app is as follows:
 
 ## View deployed app: 
 https://colorsappraheema.herokuapp.com/
+
 You can also run the app locally, explained below.
 
 ## Available Scripts
