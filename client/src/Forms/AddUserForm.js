@@ -34,7 +34,7 @@ export default function AddUserForm() {
 
     const requestOptions = {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json',
+      headers: { 'Content-Type': 'application/json'
      // 'Authorization': apiContext.authorization}
     };
      fetch(`${apiContext.api_url}/api/v1/user?username=${username}&color=${color}&group=${group}`, requestOptions)

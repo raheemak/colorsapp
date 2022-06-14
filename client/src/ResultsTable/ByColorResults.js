@@ -16,8 +16,8 @@ export default function ByColorResults(props) {
 
     const requestOptions = {
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': apiContext.authorization
+        'Content-Type': 'application/json'
+//        'Authorization': apiContext.authorization
       },
     };
 

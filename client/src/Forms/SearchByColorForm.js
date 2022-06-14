@@ -23,7 +23,7 @@ export default function SearchByColorForm() {
   React.useEffect(() => {
 
     const requestOptions = {
-      headers: { 'Content-Type': 'application/json',
+      headers: { 'Content-Type': 'application/json'
     //  'Authorization': apiContext.authorization}
     };
 
