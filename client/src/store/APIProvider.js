@@ -15,6 +15,7 @@ const APIProvider =  (props) => {
     }
 
 
+    //get authorization token 
     var options = {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
