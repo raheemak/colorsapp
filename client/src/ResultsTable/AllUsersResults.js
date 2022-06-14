@@ -18,7 +18,7 @@ export default function AllUsersResults(props) {
   React.useEffect(() => {
 
     const requestOptions = {
-      headers: { 'Content-Type': 'application/json'
+      headers: { 'Content-Type': 'application/json'}
     }}
       //'Authorization': apiContext.authorization
   
