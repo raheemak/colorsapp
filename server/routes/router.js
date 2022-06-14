@@ -20,9 +20,8 @@ var jwtCheck = jwt({secret: jwks.expressJwtSecret({
 });
 
   
-rootRouter.use (jwtCheck); 
+//rootRouter.use (jwtCheck); 
   
-
 rootRouter.route('/colors')
     .get(groupController.getAllColors);
 

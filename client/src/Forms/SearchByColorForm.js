@@ -24,7 +24,7 @@ export default function SearchByColorForm() {
 
     const requestOptions = {
       headers: { 'Content-Type': 'application/json',
-      'Authorization': apiContext.authorization}
+    //  'Authorization': apiContext.authorization}
     };
 
     fetch(`${apiContext.api_url}/api/v1/colors`, requestOptions)
